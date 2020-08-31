@@ -1,13 +1,30 @@
 .header {
     background-color: $clr3;
+    padding: 5px;
+    margin-bottom: 20px;
     .logo{
-        margin: 5px 0;
+        font-size: 25px;
     }
     .nav-bar {
         align-items: center;
         li {
-            margin-left: 20px;
-            
+            margin-left: 5px;
+        }
+        .nav-button{
+            background-color: $clr3;
+            border-radius: 3px;
+            padding: 6px; 
+            color: grey;
+            font-weight: 600;   
+            font-size: 1.3rem;
+            input{
+                background-color: $clr3;
+                border-bottom: solid 1px gray;
+                // .search-icon{
+                //     border-bottom: solid 1px gray;
+                // }
+               
+            }
         }
     }
 }

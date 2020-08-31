@@ -1,0 +1,28 @@
+.home-page{
+    .templates{
+       h2{
+           margin-bottom: 15px;
+       }
+       margin-bottom: 20px;
+        .template{
+            background-color: $clr2;
+            min-width: 200px;
+            min-height: 100px;
+            margin: 3px;
+            border-radius: 3px;;
+        }
+    }
+    .boards{
+        h2{
+            margin-bottom: 15px;
+        }
+        margin-bottom: 20px;
+         .template{
+             background-color: $clr2;
+             min-width: 200px;
+             min-height: 100px;
+             margin: 3px;
+             border-radius: 3px;;
+         }
+    }
+}

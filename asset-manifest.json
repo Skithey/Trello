@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Trello%20/static/css/main.5f361e03.chunk.css",
+    "main.js": "/Trello%20/static/js/main.d3ab679a.chunk.js",
+    "main.js.map": "/Trello%20/static/js/main.d3ab679a.chunk.js.map",
+    "runtime-main.js": "/Trello%20/static/js/runtime-main.90af4672.js",
+    "runtime-main.js.map": "/Trello%20/static/js/runtime-main.90af4672.js.map",
+    "static/js/2.8b5d2d1f.chunk.js": "/Trello%20/static/js/2.8b5d2d1f.chunk.js",
+    "static/js/2.8b5d2d1f.chunk.js.map": "/Trello%20/static/js/2.8b5d2d1f.chunk.js.map",
+    "index.html": "/Trello%20/index.html",
+    "precache-manifest.ec7ea0ea3ec9cd95d32cae50d6344f32.js": "/Trello%20/precache-manifest.ec7ea0ea3ec9cd95d32cae50d6344f32.js",
+    "service-worker.js": "/Trello%20/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/Trello%20/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.8b5d2d1f.chunk.js.LICENSE.txt": "/Trello%20/static/js/2.8b5d2d1f.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Trello%20/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90af4672.js",
+    "static/js/2.8b5d2d1f.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.d3ab679a.chunk.js"
+  ]
+}

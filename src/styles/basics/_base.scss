@@ -41,8 +41,7 @@ button {
 }
 
 input {
-    font-family: 'Cabin Condensed', sans-serif;
-    padding: 0.5rem;
+border: none;
     outline: none;
 }
 
@@ -63,10 +62,15 @@ p {
     padding: 0;
 }
 
-h2 { 
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #bbb;
-    width: fit-content;
-    padding-bottom: .5rem;
+// h2 { 
+//     font-size: 2rem;
+//     margin-bottom: 1rem;
+//     border-bottom: 1px solid #bbb;
+//     width: fit-content;
+//     padding-bottom: .5rem;
+// }
+li:hover{
+    transition: .2s;
+    opacity: 70%;
+    cursor: pointer;
 }

@@ -28,5 +28,5 @@ class HomePage extends Component {
         );
     }
 }
-
-export default HomePage;
+export default HomePage
+// export const HomePage= connect(mapStateProps,mapDispatchToProps)(_HomePage);

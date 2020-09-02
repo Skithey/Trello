@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 class BoardTopic extends Component {
     openModal = () =>{
-        console.log('haye');
+        console.log('hayeדד');
     }
     closeModal=()=>{
         console.log('modal is closed');

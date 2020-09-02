@@ -1,6 +1,8 @@
 import axios from 'axios'
-
+import { storageService } from './storage.service';
+const KEY = 'boards'
 const BASE_URL = (process.env.NODE_ENV !== 'development') ? '/api/board' : '//localhost:3000/board';
+
 
 export const BoardService = {
     query,
@@ -14,17 +16,23 @@ function _getURL(id = '') {
 }
 
 function query(filterBy) {
+    // console.log('loading boards');
     return axios.get(`${_getURL()}`)
-        .then(res =>{
-            console.log(res.data);
-            return res.data})
-} 
+        .then(res => {
+            storageService.store(KEY, res.data)
+            return res.data
+        })
+}
 
 async function getById(id) {
-    console.log('id is ',id);
-    const board = await axios.get(`${_getURL(id)}`)
-        console.log('board iss', board);
-    return board.data
+    return new Promise((resolve, reject) => {
+        let boards = storageService.load(KEY)
+        if(!boards) boards = query()
+        const board = boards.find(board => {
+            return board._id === id
+        })
+        board ? resolve(board) : reject(`Board id ${id} not found!`)
+    })
 }
 
 function _makeId(length = 5) {

@@ -1,29 +1,45 @@
 import React, { Component } from 'react'
 import BoardNav from '../../cmps/BoardNav/BoardNav'
 import { BoardService } from '../../services/board.service.js'
-
-class BoardDetails extends Component {
+import BoardTopic from '../../cmps/BoardTopic/BoardTopic'
+import { connect } from 'react-redux';
+import { loadBoards } from '../../actions/BoardActions';
+class _BoardDetails extends Component {
     state = {
-        board: null
+        board: null,
     }
-
     async componentDidMount() {
-        console.log(this.props.match.params.id);
-        const board = await BoardService.getById(this.props.match.params.id)
+        const board = await BoardService.getById(this.props.match.params.boardId)
         this.setState({ board })
     }
     render() {
-        if(!this.state.board || !this.props.board) return <p>Loading..</p>
+        if (!this.state.board) return <p>Loading..</p>
         return (
-            <main>
-                <BoardNav />
+            <main className="board-details">
+                <BoardNav board={this.state.board} />
                 <h5>This is the board details</h5>
-                {this.state.board}
+                <section className="topics-list flex wrap">
+                {this.state.board.topics.map(topic=>{
+                    return(
+                        <BoardTopic topic={topic} board={this.state.board} key={topic.id}/> 
+                        )
+                    })}
+                    </section>
             </main>
         )
     }
 }
+function mapStateProps(state) {
+    return {
+        boards: state.boardReducer.boards
+    }
+}
 
-export default BoardDetails
+const mapDispatchToProps = {
+    loadBoards
+}
+
+export const BoardDetails = connect(mapStateProps, mapDispatchToProps)(_BoardDetails)
+// export default BoardDetails
 // export const HomePage= connect(mapStateProps,mapDispatchToProps)(_HomePage);
 

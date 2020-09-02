@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { BoardService } from '../../services/board.service.js'
 import BoardList from '../../cmps/BoardList/BoardList'
+import { storageService } from '../../services/storage.service'
+import { connect } from 'react-redux';
+import { loadBoards } from '../../actions/BoardActions';
 
-class HomePage extends Component {
-    state = {
-        boards: null
-    }
-
+class _HomePage extends Component {
     async componentDidMount() {
+        await this.props.loadBoards()
         const boards = await BoardService.query()
+        storageService.store('boards', boards)
         this.setState({ boards })
     }
 
     render() {
-        if (!this.state.boards || !this.state.boards.length) return <p>Loading..</p>
+        if (!this.props.boards) return <p>Loading..</p>
         return (
             <div className="home-page">
                 <main className="main-container container home-page column-layout">
@@ -28,12 +29,23 @@ class HomePage extends Component {
                     </section>
                     <section className="boards">
                         <h2>Boards</h2>
-                        <BoardList boards={this.state.boards}/>
+                        <BoardList boards={this.props.boards} />
                     </section>
                 </main>
             </div>
         );
     }
 }
-export default HomePage
+function mapStateProps(state) {
+    return {
+        boards: state.boardReducer.boards
+    }
+}
+
+const mapDispatchToProps = {
+    loadBoards
+}
+
+export const HomePage = connect(mapStateProps, mapDispatchToProps)(_HomePage)
+// export default HomePage
 // export const HomePage= connect(mapStateProps,mapDispatchToProps)(_HomePage);

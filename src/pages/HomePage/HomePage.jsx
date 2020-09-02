@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import { BoardService } from '../../services/board.service.js'
+import BoardList from '../../cmps/BoardList/BoardList'
 
 class HomePage extends Component {
+    state = {
+        boards: null
+    }
+
+    async componentDidMount() {
+        const boards = await BoardService.query()
+        this.setState({ boards })
+    }
+
     render() {
+        if (!this.state.boards || !this.state.boards.length) return <p>Loading..</p>
         return (
             <div className="home-page">
                 <main className="main-container container home-page column-layout">
@@ -16,12 +28,7 @@ class HomePage extends Component {
                     </section>
                     <section className="boards">
                         <h2>Boards</h2>
-                        <ul className="flex wrap clean-list">
-                            <li className="template flex-center">Board 1</li>
-                            <li className="template flex-center">Board 2</li>
-                            <li className="template flex-center">Board 3</li>
-                            <li className="template flex-center">Board 4</li>
-                        </ul>
+                        <BoardList boards={this.state.boards}/>
                     </section>
                 </main>
             </div>

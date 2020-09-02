@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Header extends Component {
     render() {
@@ -10,15 +12,15 @@ class Header extends Component {
                     <ul className="first-nav nav-bar clean-list flex ">
                         {/* <li><NavLink to="/" exact>x</NavLink></li> */}
                         <li className="nav-button">
-                            <FontAwesomeIcon icon={['fas', 'home']} />
-                            
-                                </li>
+                            <NavLink to="/" exact> <FontAwesomeIcon icon={['fas', 'home']} />
+                            </NavLink>
+                        </li>
                         <li className="nav-button">
                             <FontAwesomeIcon icon={['fas', 'chalkboard']} />
-                            </li>
-                        <li className="nav-button"><input type="text" />  
-                         <FontAwesomeIcon icon={['fas', 'search']} className="search-icon" />
-                         </li>
+                        </li>
+                        <li className="nav-button"><input type="text" />
+                            <FontAwesomeIcon icon={['fas', 'search']} className="search-icon" />
+                        </li>
                     </ul>
 
                     <section className="logo flex align-center">
@@ -26,8 +28,8 @@ class Header extends Component {
                     </section>
 
                     <ul className="second-nav nav-bar clean-list flex ">
-                        <li className="nav-button"> 
-                        <FontAwesomeIcon icon={['fas', 'plus']} />
+                        <li className="nav-button">
+                            <FontAwesomeIcon icon={['fas', 'plus']} />
                         </li>
                         <li className="nav-button">
                             <FontAwesomeIcon icon={['far', 'user']} />

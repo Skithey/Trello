@@ -1,41 +1,39 @@
 const INITIAL_STATE = {
-    boards: null,
-    board: null,
     filterBy: null,
     card: null
 }
 
-export function BoardReducer(state = INITIAL_STATE, action) {
+export function CardReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'SET_BOARDS':
+        case 'SET_CARDS':
             return {
                 ...state,
-                boards: action.boards
+                cards: action.cards
             }
         case 'SET_FILTER':
             return {
                 ...state,
                 filterBy: action.filterBy
             }
-        case 'ADD_BOARD':
+        case 'ADD_CARD':
             return {
                 ...state,
-                boards: [...state.boards, action.board]
+                cards: [...state.cards, action.card]
             }
-        case 'REMOVE_BOARD':
+        case 'REMOVE_CARD':
             return {
                 ...state,
-                boards: state.boards.filter(board => board._id !== action.id)
+                cards: state.cards.filter(card => card._id !== action.id)
             }
-        case 'UPDATE_BOARD':
+        case 'UPDATE_CARD':
             return {
                 ...state,
-                boards: state.boards.map(board => (board._id === action.board._id) ? action.board : board)
+                cards: state.cards.map(card => (card._id === action.card._id) ? action.card : card)
             }
-        case 'FIND_BOARD':
+        case 'FIND_CARD':
             return {
                 ...state,
-                board: action.board
+                card: action.card
             }
         default:
             return state;

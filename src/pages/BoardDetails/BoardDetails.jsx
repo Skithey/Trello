@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import BoardNav from '../../cmps/BoardNav/BoardNav'
 import { BoardService } from '../../services/board.service.js'
-import BoardTopic from '../../cmps/BoardTopic/BoardTopic'
+import  BoardTopic  from '../../cmps/BoardTopic/BoardTopic'
 import { connect } from 'react-redux';
 import { loadBoards } from '../../actions/BoardActions';
 class _BoardDetails extends Component {
@@ -19,12 +19,12 @@ class _BoardDetails extends Component {
                 <BoardNav board={this.state.board} />
                 <h5>This is the board details</h5>
                 <section className="topics-list flex wrap">
-                {this.state.board.topics.map(topic=>{
-                    return(
-                        <BoardTopic topic={topic} board={this.state.board} key={topic.id}/> 
+                    {this.state.board.topics.map(topic => {
+                        return (
+                            <BoardTopic topic={topic} board={this.state.board} key={topic.id} />
                         )
                     })}
-                    </section>
+                </section>
             </main>
         )
     }

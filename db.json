@@ -81,7 +81,7 @@
                 {
                 "id": "c101",
                 "name": "card1",
-                "description": "",
+                "description": "I love being falallef",
                 "dueDate": 100000,
                 "createdAt": 100000,
                 "members": [{
@@ -93,9 +93,9 @@
                 "backgroundColor": "",
                 "attachments": [],
                 "checklists": [{
-                    "id": "",
+                    "id": "c101",
                     "tasks": [{
-                        "text": "",
+                        "text": "t10101",
                         "isDone": false
                     }]
                 }]
